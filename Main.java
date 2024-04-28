@@ -6,6 +6,7 @@
  * 
  */
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main{
 
@@ -18,7 +19,6 @@ public class Main{
 
         Texto objetoTexto = new Texto();
 
-        Respostas objetoRespostas = new Respostas();
 
         boolean verificaVerdade = objetoFuncoes.parandoExecucao("Deseja iniciar a operação? Digite 'S' ou 'N'\nR: ");
 
@@ -63,7 +63,11 @@ public class Main{
 
             //Resposta de perguntas
             }else{
-                
+                //instancia a classe Random para gerar um numero aleatorio de 0 a 3
+                Random objetoRandom = new Random();
+                int numeroAleatorio = objetoRandom.nextInt(4);
+                //instancia respostas enviando o numero aleatorio para indicar a pergunta correta
+                Respostas objetoRespostas = new Respostas(numeroAleatorio);
                 
                 //Retorna todos os Tópicos
                 String[] todosTopicos = objetoTopicos.getAll();
